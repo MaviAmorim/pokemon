@@ -7,17 +7,19 @@ export class PokemonDetails {
 
   show(pokemon) {
     this.container.innerHTML = `
-      <button class="back-btn">← Voltar</button>
       <img src="${pokemon.image}" alt="${pokemon.name}">
       <h2>${pokemon.name} (#${pokemon.id})</h2>
       <p><strong>Tipo:</strong> ${pokemon.types.join(", ")}</p>
-      <h3>Stats</h3>
+      <h3>Status</h3>
       <ul>
-        ${pokemon.stats.map(s => `<li>${s.name}: ${s.base}</li>`).join("")}
+        ${pokemon.stats.map((s) => `<li>${s.name}: ${s.base}</li>`).join("")}
       </ul>
+      <button class="back-btn">← Voltar</button>
     `;
 
-    this.container.querySelector(".back-btn").addEventListener("click", this.onBack);
+    this.container
+      .querySelector(".back-btn")
+      .addEventListener("click", this.onBack);
     this.container.style.display = "block";
   }
 

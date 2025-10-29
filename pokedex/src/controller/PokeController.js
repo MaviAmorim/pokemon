@@ -6,7 +6,7 @@ import { SearchBar } from "../view/molecules/SearchBar.js";
 export class PokeController {
   constructor(root) {
     this.root = root;
-    this.limit = 200;
+    this.limit = 50;
     this.offset = 0;
     this.pokemons = [];
     this.isLoading = false;
